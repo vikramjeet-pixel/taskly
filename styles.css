@@ -1,0 +1,166 @@
+:root {
+    --transition: all 0.3s ease;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    transition: var(--transition);
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.theme-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.todo-form {
+    margin-bottom: 2rem;
+}
+
+#todo-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+input, select, button {
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+button {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.task-item.completed {
+    opacity: 0.7;
+    text-decoration: line-through;
+}
+
+.priority-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.priority-high { background: #ff4444; }
+.priority-medium { background: #ffbb33; }
+.priority-low { background: #00cc00; }
+
+.todo-stats {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Default Theme */
+body {
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    color: #333;
+}
+button { background: #4285f4; color: white; }
+.btn-danger { background: #ff4444; }
+
+/* Boy Blue Theme */
+body.boy-blue {
+    background: linear-gradient(135deg, #e6f3ff, #b3d9ff);
+    color: #003087;
+}
+.boy-blue button { background: #003087; }
+.boy-blue .task-item { background: #cce5ff; }
+
+/* Boy Adventure Theme */
+body.boy-adventure {
+    background: linear-gradient(135deg, #4a4035, #664422);
+    color: #e6b800;
+}
+.boy-adventure button { background: #cc7a00; }
+.boy-adventure .task-item { background: #806633; }
+
+/* Girl Pink Theme */
+body.girl-pink {
+    background: linear-gradient(135deg, #ffe6f2, #ffb3d9);
+    color: #cc0066;
+}
+.girl-pink button { background: #ff3399; }
+.girl-pink .task-item { background: #ffcce6; }
+
+/* Girl Purple Theme */
+body.girl-purple {
+    background: linear-gradient(135deg, #f2e6ff, #d9b3ff);
+    color: #6600cc;
+}
+.girl-purple button { background: #9933ff; }
+.girl-purple .task-item { background: #e6ccff; }
+
+/* Girl Fairy Theme */
+body.girl-fairy {
+    background: linear-gradient(135deg, #e6fff2, #b3ffe6);
+    color: #006666;
+}
+.girl-fairy button { background: #00cccc; }
+.girl-fairy .task-item { background: #ccfff5; }
+
+@media (max-width: 600px) {
+    #todo-form {
+        grid-template-columns: 1fr;
+    }
+    .theme-controls {
+        flex-direction: column;
+    }
+}
